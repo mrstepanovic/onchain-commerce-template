@@ -8,34 +8,32 @@ export default function OnchainStoreModal({
   closeModal,
 }: OnchainStoreModalReact) {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="relative z-10 flex h-full xs:h-auto max-w-lg flex-col gap-2 xs:rounded-[10px] bg-[white] p-6 px-10">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
+      <div className="relative z-10 flex h-full xs:h-auto max-w-lg flex-col gap-2 xs:rounded-[10px] bg-gradient-to-br from-white to-gray-50 p-6 px-10 shadow-xl">
         <button
           type="button"
-          className="absolute top-2 right-4"
+          className="absolute top-2 right-4 text-purple-700 hover:text-purple-900 transition-colors"
           onClick={closeModal}
         >
           <CloseSvg />
         </button>
         <div className="flex flex-col items-start gap-2 pt-4 pb-4">
-          <div className="font-bold">Try it locally</div>
-          <span className="text-sm ">
-            <a href={GITHUB_LINK} className="ock-text-primary">
-              Fork the template and experience the end-to-end checkout flow.{' '}
+          <div className="font-bold text-xl text-purple-800">CryptoShop Checkout</div>
+          <span className="text-sm text-gray-700">
+            <a href={GITHUB_LINK} className="text-purple-600 hover:text-purple-800 transition-colors">
+              Experience our seamless crypto payment process.{' '}
             </a>
-            Your users will see the below screen when the payment flow is
-            active.
+            This is a preview of what your customers will see during checkout.
           </span>
           <div className="mx-auto flex grow justify-center py-4">
             <Image
               src={CommerceScreenImage}
-              alt="123"
-              className="mx-auto h-[400px] w-auto rounded-[10px]"
+              alt="Checkout Preview"
+              className="mx-auto h-[400px] w-auto rounded-[10px] shadow-lg"
             />
           </div>
-          <div className="ock-text-foreground-muted text-xs ">
-            These products are not for sale. We have disabled the end-to-end
-            checkout flow on production.
+          <div className="text-xs text-gray-500 italic">
+            This is a demo checkout flow. No actual transactions will be processed.
           </div>
         </div>
       </div>
